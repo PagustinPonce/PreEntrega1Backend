@@ -1,0 +1,16 @@
+{
+  "name": "preentrega1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "node --watch src/app.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Agustin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
