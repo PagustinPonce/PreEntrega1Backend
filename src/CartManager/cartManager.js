@@ -33,8 +33,6 @@ export default class CartManager{
 
     };
 
-};
-
 addCart= ()=>{
 
     try {
@@ -106,3 +104,5 @@ addCart= ()=>{
         }
     }
 }
+
+};

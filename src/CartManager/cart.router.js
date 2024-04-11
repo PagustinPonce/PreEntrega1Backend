@@ -1,6 +1,6 @@
 import { Router } from "express";
-import CartManager from "./cartManager";
-import { isExist } from "../utils/utils";
+import CartManager from "./cartManager.js";
+import { isExist } from "../utils/utils.js";
 
 const router = new Router();
 

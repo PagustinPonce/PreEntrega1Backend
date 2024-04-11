@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { ProductManager } from "./productManager";
+import { ProductManager } from "./productManager.js";
 import { isExist } from "../utils/utils";
 
 

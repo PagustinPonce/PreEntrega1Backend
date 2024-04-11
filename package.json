@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "dev": "node --watch src/app.js"
+    "dev": "node --watch src/app/app.js"
   },
   "type": "module",
   "keywords": [],
