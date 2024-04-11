@@ -1,4 +1,5 @@
 import fs, { readFile, writeFile } from 'fs';
+import { v4 as uuidv4 } from 'uuid';
 import { Router } from 'express';
 
 export default class CartManager{
@@ -33,7 +34,7 @@ export default class CartManager{
 
     };
 
-addCart= ()=>{
+addCart= async()=>{
 
     try {
 
@@ -41,9 +42,9 @@ addCart= ()=>{
 
         const cart = {
 
-            id: ,
+            id: uuidv4(),
 
-            products = []
+            products: []
 
         }
 
