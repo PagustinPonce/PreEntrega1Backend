@@ -1,0 +1,80 @@
+<main>
+
+    <div>
+
+        <h1>Listado de productos</h1>
+
+        <div>
+
+            {{#each products}}
+
+            <div>
+
+                <h2>{{this.title}} </h2>
+
+                <p>Id:{{this.id}} </p>
+
+                <p>Precio:{{this.precio}} </p>
+
+                <p>Stock:{{this.stock}} </p>
+
+            </div>
+
+            {{/each}}
+
+        </div>
+
+        <div>
+
+            <form action="">
+
+                <h3>Agregue un producto:</h1>
+
+                <div>
+
+                    <input type="text" placeholder="Ingrese el su nombre" id="title" name="title" required />
+
+                    <input type="number" placeholder="Ingrese el precio" id="price" name="price" required>
+
+                    <input type="number" placeholder="Ingrese código" id="code" name="code" required>
+
+                    <input type="number" placeholder="Ingrese stock" id="stock" name="stock" required>
+
+                    <input placeholder="Agregue una descripción" id="description" name="description" required>
+
+                </div>
+
+                <div>
+
+                    <button type="submit">Agregar producto</button>
+
+                </div>
+
+            </form>
+
+            <form action="">
+
+                <h3>Borrar producto:</h3>
+
+                <div>
+
+                    <input type="number" placeholder="Ingrese el id del producto" id="id" required>
+
+                </div>
+
+                <div>
+
+                    <button type="submit">Borrar producto</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+<script src="/js/realTimeProducts.js"></script>

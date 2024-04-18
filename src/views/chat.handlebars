@@ -1,0 +1,79 @@
+<main>
+
+    <h1>Chat con handlebars</h1>
+
+    <div>
+
+        <input type="text" name="chatBox" id="chatBox">
+
+    </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+
+    const socket = io();
+
+    let user;
+
+    let chatBox = document.querySelector('#chatbox');
+
+    Swal.fire({
+        title: 'Por favor identificarse aqui',
+        input: 'text',
+        text: 'Ingrese su nombre',
+        inputValidator: value => {
+            return !value && 'Para poder ingresar al chat debe escribir su nombre'
+        };
+
+        allowOutsideClick: false
+
+    });
+
+    .then(result =>{
+
+        user = result.value;
+
+        console.log(user);
+
+    });
+
+    chatBox.addEventListener('keyup', event =>{
+
+        if(event.key === 'Enter'){
+            
+            if(chatBox.value.trim().length > 0){
+
+                socket.emit('message',{
+
+                    user,
+
+                    message: chatBox.value;
+
+                });
+
+                chatBox.value= '';
+
+            };
+        };
+    });
+
+    socket.on('messageLogs', data =>{
+
+        let log = document.getElementById('messageLog');
+
+        let messages= '';
+
+        data.forEach(message=>{
+
+            messages += `<li>${message.user}- dice ${message.message}</li>`
+
+        });
+
+        log innerHTML = messages;
+        
+    })
