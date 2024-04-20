@@ -3,6 +3,7 @@ import cartRouter from '../CartManager/cart.router.js'
 import viewsRouter from './view.router.js';
 import handlebars from 'express-handlebars';
 import { Server } from 'socket.io';
+import { __dirname } from '../utils/utils.js';
 
 import express from 'express';
 
@@ -29,19 +30,6 @@ app.engine('handlebars',handlebars.engine({extname: 'handlebars'}));
 app.set('views',__dirname+'/views');
 
 app.set('view engine', 'handlebars');
-
-
-app.use('/upload-file',uploader.single('myFile'),(req,res)=>{
-
-    if(!req.file){
-
-        return res.send('No se pudo subir el archivo');
-
-    };
-
-    res.status(200).send('El archivo se ha subido con exito');
-
-});
 
 app.use('/',viewsRouter);
 

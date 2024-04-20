@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { ProductManager } from "./productManager.js";
-import { isExist } from "../utils/utils";
+import { isExist } from "../utils/utils.js";
 
 
 const router = new Router();
