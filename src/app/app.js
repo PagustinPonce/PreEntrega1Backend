@@ -17,6 +17,8 @@ const httpServer = app.listen(8080, error =>{
 
 const io = new Server(httpServer);
 
+app.use(express.static('src/public'))
+
 app.use(express.json());
 
 app.use(express.urlencoded({extended:true}));
@@ -27,7 +29,7 @@ app.use('/api/cart', cartRouter);
 
 app.engine('handlebars',handlebars.engine({extname: 'handlebars'}));
 
-app.set('views',__dirname+'/views');
+app.set('views','src/views');
 
 app.set('view engine', 'handlebars');
 
